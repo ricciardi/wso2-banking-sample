@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:esb="http:///org/wso2/developerstudio/eclipse/gmf/esb" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_JDivEJtJEeSvzrXO1dqzJQ" type="Esb" name="endpoint_cardServiceEP.esb_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_JFQmUJtJEeSvzrXO1dqzJQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_JFQmVZtJEeSvzrXO1dqzJQ" type="7001"/>
+    <children xmi:type="notation:Shape" xmi:id="_JINzsJtJEeSvzrXO1dqzJQ" type="3642" fontName="Ubuntu">
+      <children xmi:type="notation:BasicCompartment" xmi:id="_JINzsptJEeSvzrXO1dqzJQ" type="7041">
+        <children xmi:type="notation:Node" xmi:id="_JI8McJtJEeSvzrXO1dqzJQ" type="3646">
+          <children xmi:type="notation:DecorationNode" xmi:id="_JI8zgJtJEeSvzrXO1dqzJQ" type="5161"/>
+          <styles xmi:type="notation:DescriptionStyle" xmi:id="_JI8McZtJEeSvzrXO1dqzJQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_JI8McptJEeSvzrXO1dqzJQ" fontName="Ubuntu"/>
+          <styles xmi:type="notation:LineStyle" xmi:id="_JI8Mc5tJEeSvzrXO1dqzJQ"/>
+          <element xmi:type="esb:AddressEndPoint" href="endpoint_cardServiceEP.esb#//@server/@children.0/@child"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JI8MdJtJEeSvzrXO1dqzJQ" width="75" height="75"/>
+        </children>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_JINzs5tJEeSvzrXO1dqzJQ" showTitle="true"/>
+      </children>
+      <element xmi:type="esb:EndpointDiagram" href="endpoint_cardServiceEP.esb#//@server/@children.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JINzsZtJEeSvzrXO1dqzJQ" width="113" height="100"/>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_JFQmUZtJEeSvzrXO1dqzJQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_JFQmUptJEeSvzrXO1dqzJQ" fontName="Ubuntu"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_JFQmU5tJEeSvzrXO1dqzJQ"/>
+    <element xmi:type="esb:EsbServer" href="endpoint_cardServiceEP.esb#//@server"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JFQmVJtJEeSvzrXO1dqzJQ"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_JDivEZtJEeSvzrXO1dqzJQ"/>
+  <element xmi:type="esb:EsbDiagram" href="endpoint_cardServiceEP.esb#/"/>
+</notation:Diagram>
