@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xs:schema attributeFormDefault="qualified"
-	elementFormDefault="qualified" targetNamespace="http://hcc.wso2/xsd"
-	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:Q1="http://hcc.wso2/xsd">
+	elementFormDefault="qualified" targetNamespace="http://hcc.wso2/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:Q1="http://hcc.wso2/">
 	<xs:complexType name="AccountDetail">
 		<xs:sequence>
 			<xs:element minOccurs="0" name="accountNo" nillable="true"
