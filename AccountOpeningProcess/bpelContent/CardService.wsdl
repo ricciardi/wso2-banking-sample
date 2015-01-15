@@ -7,14 +7,14 @@
 	<wsdl:documentation>CardService</wsdl:documentation>	
 	<wsdl:types>
 		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-			<xsd:import namespace="http://sample.wso2.org/"
+			<xsd:import namespace="http://sample.wso2.org"
 				schemaLocation="CardTypes.xsd">
 			</xsd:import></xsd:schema></wsdl:types>
 	<wsdl:message name="issueCardRequest">
-		<wsdl:part name="parameters" element="xsd1:issueCard" />
+		<wsdl:part name="parameters" element="ns:issueCard" />
 	</wsdl:message>
 	<wsdl:message name="issueCardResponse">
-		<wsdl:part name="parameters" element="xsd1:issueCardResponse" />
+		<wsdl:part name="parameters" element="ns:issueCardResponse" />
 	</wsdl:message>
 	<wsdl:portType name="CardServicePortType">
 		<wsdl:operation name="issueCard">

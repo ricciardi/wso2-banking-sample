@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xs:schema attributeFormDefault="qualified"
-	elementFormDefault="qualified" targetNamespace="http://sample.wso2.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:Q1="http://sample.wso2.org/">
+	elementFormDefault="qualified" targetNamespace="http://sample.wso2.org" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:Q1="http://sample.wso2.org/" xmlns:Q2="http://sample.wso2.org">
 	<xs:complexType name="Card">
 		<xs:sequence>
 			<xs:element minOccurs="0" name="accountNo" nillable="true"
@@ -35,7 +35,7 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element minOccurs="0" name="return" nillable="true"
-					type="Q1:Card" />
+					type="Q2:Card" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

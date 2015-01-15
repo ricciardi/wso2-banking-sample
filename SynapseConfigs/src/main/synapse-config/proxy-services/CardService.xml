@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<proxy xmlns="http://ws.apache.org/ns/synapse" name="CardService" transports="http https" startOnLoad="true" trace="disable">
+<proxy xmlns="http://ws.apache.org/ns/synapse" name="CardService" transports="http https" startOnLoad="true" trace="enable">
     <target>
         <inSequence>
             <log description="log-before-transform"/>
             <xslt key="conf:/transform/transform.xslt" description="XSLT"/>
-            <log description="log-after-transform"/>
+            <log separator="CARD SERVICE" description="log-after-transform"/>
             <send>
                 <endpoint key="cardServiceEP"/>
             </send>
@@ -14,5 +14,5 @@
         </outSequence>
         <faultSequence/>
     </target>
-    <publishWSDL uri="file:////home/ecappa/workspace/AccountOpeningProcess/bpelContent/CardService.wsdl"/>
+    <publishWSDL uri="file:////home/ecappa/workspace/BankingSample/AccountOpeningProcess/bpelContent/CardService.wsdl"/>
 </proxy>

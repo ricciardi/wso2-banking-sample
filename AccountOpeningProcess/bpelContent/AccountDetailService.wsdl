@@ -2,19 +2,20 @@
 	xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://hcc.wso2"
 	xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ax2362="http://hcc.wso2/xsd"
-	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://hcc.wso2" xmlns:xsd="http://hcc.wso2/">
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://hcc.wso2">
 	<wsdl:documentation>AccountDetailService</wsdl:documentation>
 	<wsdl:types>
 		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-			<xsd:import namespace="http://hcc.wso2/"
-				schemaLocation="AccountDetailsTypes.xsd">
-			</xsd:import></xsd:schema></wsdl:types>
+			<xsd:import namespace="http://hcc.wso2" schemaLocation="AccountDetailsTypes.xsd">
+			</xsd:import>
+		</xsd:schema>
+	</wsdl:types>
 	<wsdl:message name="createAccountRequest">
-		<wsdl:part name="parameters" element="xsd:createAccount" />
+		<wsdl:part name="parameters" element="ns:createAccount" />
 	</wsdl:message>
 	<wsdl:message name="createAccountResponse">
-		<wsdl:part name="parameters" element="xsd:createAccountResponse" />
+		<wsdl:part name="parameters" element="ns:createAccountResponse" />
 	</wsdl:message>
 	<wsdl:portType name="AccountDetailServicePortType">
 		<wsdl:operation name="createAccount">

@@ -6,17 +6,17 @@
 	name="AccountOpeningProcessService" targetNamespace="http://wso2.org/banking" xmlns:xsd1="http://sample.wso2.org/xsd" xmlns:xsd2="http://sample.wso2.org/" xmlns:xsd3="http://wso2.org/banking/">
 	<wsdl:types>
 		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-			<xsd:import namespace="http://wso2.org/banking/"
+			<xsd:import namespace="http://wso2.org/banking"
 				schemaLocation="AccountOpeningProcessTypes.xsd">
 			</xsd:import>
-			<xsd:import namespace="http://sample.wso2.org/"
+			<xsd:import namespace="http://sample.wso2.org"
 				schemaLocation="CardTypes.xsd">
 			</xsd:import></xsd:schema></wsdl:types>
 	<wsdl:message name="CreateAccountRequest">
-		<wsdl:part element="xsd3:CreateAccount" name="parameters" />
+		<wsdl:part element="tns:CreateAccount" name="parameters" />
 	</wsdl:message>
 	<wsdl:message name="CreateAccountResponse">
-		<wsdl:part element="xsd2:issueCardResponse" name="parameters" />
+		<wsdl:part element="cs:issueCardResponse" name="parameters" />
 	</wsdl:message>
 	<wsdl:portType name="AccountOpeningProcessService">
 		<wsdl:operation name="CreateAccount">

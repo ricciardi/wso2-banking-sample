@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <esb:EsbDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:esb="http:///org/wso2/developerstudio/eclipse/gmf/esb">
   <server type="PROXY">
-    <children xsi:type="esb:ProxyService" name="CardService" transports="http,https" wsdlType="SOURCE_URL" wsdlURL="file:////home/ecappa/workspace/AccountOpeningProcess/bpelContent/CardService.wsdl">
+    <children xsi:type="esb:ProxyService" name="CardService" traceEnabled="true" transports="http,https" wsdlType="SOURCE_URL" wsdlURL="file:////home/ecappa/workspace/BankingSample/AccountOpeningProcess/bpelContent/CardService.wsdl">
       <outputConnector>
         <outgoingLink target="//@server/@children.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@inputConnector"/>
       </outputConnector>
@@ -30,7 +30,7 @@
                 <outgoingLink target="//@server/@children.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@inputConnector"/>
               </outputConnector>
             </children>
-            <children xsi:type="esb:LogMediator" description="log-after-transform">
+            <children xsi:type="esb:LogMediator" description="log-after-transform" logSeparator="CARD SERVICE">
               <inputConnector incomingLinks="//@server/@children.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@outputConnector/@outgoingLink"/>
               <outputConnector>
                 <outgoingLink target="//@server/@children.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.3/@InputConnector"/>
