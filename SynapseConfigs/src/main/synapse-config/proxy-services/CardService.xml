@@ -14,5 +14,5 @@
         </outSequence>
         <faultSequence/>
     </target>
-    <publishWSDL uri="file:////home/ecappa/workspace/BankingSample/AccountOpeningProcess/bpelContent/CardService.wsdl"/>
+    <publishWSDL uri="http://192.168.7.101:9763/services/CardAxis2Service?wsdl"/>
 </proxy>

@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-	xmlns:tns="http://wso2.org/banking" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://wso2.org/banking"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cs="http://sample.wso2.org"
 	xmlns:tns1="http://wso2.org/banking/xsd"
 	name="AccountOpeningProcessService" targetNamespace="http://wso2.org/banking" xmlns:xsd1="http://sample.wso2.org/xsd" xmlns:xsd2="http://sample.wso2.org/" xmlns:xsd3="http://wso2.org/banking/">
+	<wsdl:import namespace="http://sample.wso2.org" location="CardService.wsdl"></wsdl:import>
 	<wsdl:types>
 		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 			<xsd:import namespace="http://wso2.org/banking"
 				schemaLocation="AccountOpeningProcessTypes.xsd">
 			</xsd:import>
-			<xsd:import namespace="http://sample.wso2.org"
-				schemaLocation="CardTypes.xsd">
-			</xsd:import></xsd:schema></wsdl:types>
+</xsd:schema></wsdl:types>
 	<wsdl:message name="CreateAccountRequest">
 		<wsdl:part element="tns:CreateAccount" name="parameters" />
 	</wsdl:message>

@@ -11,7 +11,7 @@
             </send>
         </inSequence>
         <outSequence>
-            <log level="full" separator=",">
+            <log level="full" separator=",SEPAR,">
                 <property name="debug" value="accountProxyOUT"/>
             </log>
             <property name="TRANSPORT_HEADERS" scope="axis2" action="remove"/>

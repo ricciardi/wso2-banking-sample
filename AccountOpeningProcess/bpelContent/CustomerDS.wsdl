@@ -2,14 +2,62 @@
 	xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
 	xmlns:ns0="http://ws.wso2.org/dataservice" xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
-	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://ws.wso2.org/dataservice"
-	xmlns:xsd="http://ws.wso2.org/dataservice/xsd" xmlns:xsd1="http://ws.wso2.org/dataservice/">
-	<wsdl:documentation />
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://ws.wso2.org/dataservice">
+	<wsdl:documentation></wsdl:documentation>
 	<wsdl:types>
-		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-			<xsd:import namespace="http://ws.wso2.org/dataservice"
-				schemaLocation="CustomerDSTypes.xsd">
-			</xsd:import></xsd:schema></wsdl:types>
+		<xs:schema attributeFormDefault="unqualified"
+			elementFormDefault="qualified" targetNamespace="http://ws.wso2.org/dataservice">
+			<xs:element name="DataServiceFault">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="current_params" type="xs:string"></xs:element>
+						<xs:element name="current_request_name" type="xs:string"></xs:element>
+						<xs:element name="nested_exception" type="xs:string"></xs:element>
+						<xs:element name="source_data_service">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="location" type="xs:string"></xs:element>
+									<xs:element name="default_namespace" type="xs:string"></xs:element>
+									<xs:element name="description" type="xs:string"></xs:element>
+									<xs:element name="data_service_name" type="xs:string"></xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="ds_code" type="xs:string"></xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="REQUEST_STATUS" type="xs:string"></xs:element>
+			<xs:element name="DATA_SERVICE_RESPONSE">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:any minOccurs="0"></xs:any>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="op1">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="NID" nillable="true" type="xs:string"></xs:element>
+						<xs:element name="Name" nillable="true" type="xs:string"></xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Entries" type="ns0:Entries"></xs:element>
+			<xs:complexType name="Entries">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Entry"
+						type="ns0:Entry"></xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="Entry">
+				<xs:sequence>
+					<xs:element name="Flag" nillable="true" type="xs:integer"></xs:element>
+					<xs:element name="Customer" nillable="true" type="xs:string"></xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</wsdl:types>
 	<wsdl:message name="op1Request">
 		<wsdl:part name="parameters" element="ns0:op1"></wsdl:part>
 	</wsdl:message>
@@ -77,25 +125,25 @@
 			<soap:address
 				location="http://192.168.7.101:9769/services/CustomerDS.SOAP11Endpoint/"></soap:address>
 		</wsdl:port>
-<!-- 		<wsdl:port name="SecureSOAP11Endpoint" binding="ns0:CustomerDSSOAP11Binding"> -->
-<!-- 			<soap:address -->
-<!-- 				location="https://192.168.7.101:9449/services/CustomerDS.SecureSOAP11Endpoint/"></soap:address> -->
-<!-- 		</wsdl:port> -->
-<!-- 		<wsdl:port name="SecureSOAP12Endpoint" binding="ns0:CustomerDSSOAP12Binding"> -->
-<!-- 			<soap12:address -->
-<!-- 				location="https://192.168.7.101:9449/services/CustomerDS.SecureSOAP12Endpoint/"></soap12:address> -->
-<!-- 		</wsdl:port> -->
-<!-- 		<wsdl:port name="SOAP12Endpoint" binding="ns0:CustomerDSSOAP12Binding"> -->
-<!-- 			<soap12:address -->
-<!-- 				location="http://192.168.7.101:9769/services/CustomerDS.SOAP12Endpoint/"></soap12:address> -->
-<!-- 		</wsdl:port> -->
-<!-- 		<wsdl:port name="HTTPEndpoint" binding="ns0:CustomerDSHttpBinding"> -->
-<!-- 			<http:address -->
-<!-- 				location="http://192.168.7.101:9769/services/CustomerDS.HTTPEndpoint/"></http:address> -->
-<!-- 		</wsdl:port> -->
-<!-- 		<wsdl:port name="SecureHTTPEndpoint" binding="ns0:CustomerDSHttpBinding"> -->
-<!-- 			<http:address -->
-<!-- 				location="https://192.168.7.101:9449/services/CustomerDS.SecureHTTPEndpoint/"></http:address> -->
-<!-- 		</wsdl:port> -->
+		<wsdl:port name="SecureSOAP11Endpoint" binding="ns0:CustomerDSSOAP11Binding">
+			<soap:address
+				location="https://192.168.7.101:9449/services/CustomerDS.SecureSOAP11Endpoint/"></soap:address>
+		</wsdl:port>
+		<wsdl:port name="SecureSOAP12Endpoint" binding="ns0:CustomerDSSOAP12Binding">
+			<soap12:address
+				location="https://192.168.7.101:9449/services/CustomerDS.SecureSOAP12Endpoint/"></soap12:address>
+		</wsdl:port>
+		<wsdl:port name="SOAP12Endpoint" binding="ns0:CustomerDSSOAP12Binding">
+			<soap12:address
+				location="http://192.168.7.101:9769/services/CustomerDS.SOAP12Endpoint/"></soap12:address>
+		</wsdl:port>
+		<wsdl:port name="HTTPEndpoint" binding="ns0:CustomerDSHttpBinding">
+			<http:address
+				location="http://192.168.7.101:9769/services/CustomerDS.HTTPEndpoint/"></http:address>
+		</wsdl:port>
+		<wsdl:port name="SecureHTTPEndpoint" binding="ns0:CustomerDSHttpBinding">
+			<http:address
+				location="https://192.168.7.101:9449/services/CustomerDS.SecureHTTPEndpoint/"></http:address>
+		</wsdl:port>
 	</wsdl:service>
 </wsdl:definitions>
