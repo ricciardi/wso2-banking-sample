@@ -231,22 +231,13 @@
 					inputVariable="CSPLRequest" outputVariable="CSPLResponse"></bpel:invoke>
 				<bpel:assign validate="no" name="InitResponse">
 
-					<bpel:copy>
-						<bpel:from>
-							<bpel:literal><issueCardResponse xmlns="http://sample.wso2.org">
-									<return>
-									<accountNo xmlns="http://sample.wso2.org/xsd"></accountNo>
-									<customerID xmlns="http://sample.wso2.org/xsd"></customerID>
-									</return>
-								</issueCardResponse></bpel:literal>
-						</bpel:from>
-						<bpel:to variable="AOPPLResponse" part="parameters"></bpel:to>
-					</bpel:copy>
-					<bpel:copy>
-						<bpel:from part="parameters" variable="CSPLResponse"></bpel:from>
-						<bpel:to part="parameters" variable="AOPPLResponse"></bpel:to>
-					</bpel:copy>
-				</bpel:assign>
+					
+					
+                    <bpel:copy>
+                        <bpel:from part="parameters" variable="CSPLResponse"></bpel:from>
+                        <bpel:to part="parameters" variable="AOPPLResponse"></bpel:to>
+                    </bpel:copy>
+                </bpel:assign>
 			</bpel:sequence>
 			<bpel:else>
 				<bpel:sequence name="Sequence2">
