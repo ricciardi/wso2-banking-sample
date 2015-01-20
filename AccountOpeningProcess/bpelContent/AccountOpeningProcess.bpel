@@ -164,15 +164,17 @@
 					<bpel:copy>
 						<bpel:from>
 							<bpel:literal>
-								<Q2:issueCard xmlns:Q2="http://sample.wso2.org"
-									xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-									<Q2:customerID>Q2:customerID</Q2:customerID>
-									<Q2:isExistingCustomer>Q2:isExistingCustomer
-									</Q2:isExistingCustomer>
-									<Q2:customerName>Q2:customerName</Q2:customerName>
-									<Q2:accountNo>Q2:accountNo</Q2:accountNo>
-								</Q2:issueCard>
-							</bpel:literal>
+   <p:issueCard xmlns:p="http://sample.wso2.org">
+      <!--0 to 1 occurrence-->
+      <p:customerID>123</p:customerID>
+      <!--0 to 1 occurrence-->
+      <p:isExistingCustomer>0</p:isExistingCustomer>
+      <!--0 to 1 occurrence-->
+      <p:customerName>asd</p:customerName>
+      <!--0 to 1 occurrence-->
+      <p:accountNo>?asd</p:accountNo>
+   </p:issueCard>
+</bpel:literal>
 						</bpel:from>
 						<bpel:to variable="CSPLRequest" part="parameters"></bpel:to>
 					</bpel:copy>
@@ -183,10 +185,10 @@
 							</bpel:query>
 						</bpel:from>
 						<bpel:to part="parameters" variable="CSPLRequest">
-							<bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">
-                                <![CDATA[ns6:cID]]>
-							</bpel:query>
-						</bpel:to>
+                            <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">
+                                <![CDATA[ns6:customerID]]>
+                            </bpel:query>
+                        </bpel:to>
 					</bpel:copy>
 					<bpel:copy>
 						<bpel:from part="parameters" variable="CDSPLResponse">
@@ -195,10 +197,10 @@
 							</bpel:query>
 						</bpel:from>
 						<bpel:to part="parameters" variable="CSPLRequest">
-							<bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">
-                                <![CDATA[ns6:customerExists]]>
-							</bpel:query>
-						</bpel:to>
+                            <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">
+                                <![CDATA[ns6:isExistingCustomer]]>
+                            </bpel:query>
+                        </bpel:to>
 					</bpel:copy>
 					<bpel:copy>
 						<bpel:from part="parameters" variable="ADSPLResponse">
@@ -207,10 +209,10 @@
 							</bpel:query>
 						</bpel:from>
 						<bpel:to part="parameters" variable="CSPLRequest">
-							<bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">
-                                <![CDATA[ns6:accntNo]]>
-							</bpel:query>
-						</bpel:to>
+                            <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">
+                                <![CDATA[ns6:accountNo]]>
+                            </bpel:query>
+                        </bpel:to>
 					</bpel:copy>
 					<bpel:copy>
 						<bpel:from part="parameters" variable="AOPPLRequest">
@@ -219,10 +221,10 @@
 							</bpel:query>
 						</bpel:from>
 						<bpel:to part="parameters" variable="CSPLRequest">
-							<bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">
-                                <![CDATA[ns6:cName]]>
-							</bpel:query>
-						</bpel:to>
+                            <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">
+                                <![CDATA[ns6:customerName]]>
+                            </bpel:query>
+                        </bpel:to>
 					</bpel:copy>
 
 				</bpel:assign>
@@ -233,10 +235,37 @@
 
 					
 					
-                    <bpel:copy>
-                        <bpel:from part="parameters" variable="CSPLResponse"></bpel:from>
+                    
+                    
+                    <bpel:copy><bpel:from part="parameters" variable="CSPLResponse"></bpel:from>
                         <bpel:to part="parameters" variable="AOPPLResponse"></bpel:to>
+                    
                     </bpel:copy>
+                    <bpel:copy><bpel:from part="parameters" variable="ADSPLResponse">
+                            <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">
+                                <![CDATA[ns1:return/hcc:accountNo]]>
+                            </bpel:query>
+                        </bpel:from>
+                        <bpel:to part="parameters" variable="AOPPLResponse">
+                            <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">
+                                <![CDATA[ns6:return/xsd:accountNo]]>
+                            </bpel:query>
+                        </bpel:to>
+                    
+                    </bpel:copy>
+                    <bpel:copy>
+                        <bpel:from part="parameters" variable="CDSPLResponse">
+                            <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">
+                                <![CDATA[ns0:Entry[1]/ns0:Customer]]>
+                            </bpel:query>
+                        </bpel:from>
+                        <bpel:to part="parameters" variable="AOPPLResponse">
+                            <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"><![CDATA[ns6:return/xsd:customerID]]></bpel:query>
+                        </bpel:to>
+                    </bpel:copy>
+                    
+                    
+                    
                 </bpel:assign>
 			</bpel:sequence>
 			<bpel:else>
