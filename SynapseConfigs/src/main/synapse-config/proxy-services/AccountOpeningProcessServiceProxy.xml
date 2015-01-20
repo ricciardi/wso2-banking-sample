@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse" name="AccountOpeningProcessServiceProxy" transports="https http" startOnLoad="true" trace="disable">
+    <target>
+        <inSequence>
+            <log level="full" description="beforeTransform"/>
+            <xslt key="conf:/transform/CreateAccountFromJson.xslt" description="JsonToXml"/>
+            <property name="messageType" value="text/xml" scope="axis2" type="STRING"/>
+            <log level="full" description="midTransform"/>
+            <enrich description="SOAPEnrich">
+                <source xmlns:m0="http://wso2.org/banking" clone="true" xpath="//m0:CreateAccount"/>
+                <target type="body"/>
+            </enrich>
+            <log level="full" description="endTransform"/>
+            <send>
+                <endpoint key="AccountOpeningProcessServiceEP"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log level="full" description="RawResponse"/>
+            <xslt key="conf:transform/CreateAccountFromJsonResponse.xslt"/>
+            <log level="full" description="Transformed response"/>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </target>
+</proxy>

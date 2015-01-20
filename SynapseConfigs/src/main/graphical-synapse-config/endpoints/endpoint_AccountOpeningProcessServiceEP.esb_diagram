@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:esb="http:///org/wso2/developerstudio/eclipse/gmf/esb" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_GDjusKAREeSg9u2Yt2LyVA" type="Esb" name="endpoint_AccountOpeningProcessServiceEP.esb_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_GMV3QKAREeSg9u2Yt2LyVA" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_GMV3RaAREeSg9u2Yt2LyVA" type="7001"/>
+    <children xmi:type="notation:Shape" xmi:id="_GXn6MKAREeSg9u2Yt2LyVA" type="3642" fontName="Sans">
+      <children xmi:type="notation:BasicCompartment" xmi:id="_GXohQKAREeSg9u2Yt2LyVA" type="7041">
+        <children xmi:type="notation:Node" xmi:id="_GZh-sKAREeSg9u2Yt2LyVA" type="3646">
+          <children xmi:type="notation:DecorationNode" xmi:id="_GZh-taAREeSg9u2Yt2LyVA" type="5161"/>
+          <styles xmi:type="notation:DescriptionStyle" xmi:id="_GZh-saAREeSg9u2Yt2LyVA"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_GZh-sqAREeSg9u2Yt2LyVA" fontName="Sans"/>
+          <styles xmi:type="notation:LineStyle" xmi:id="_GZh-s6AREeSg9u2Yt2LyVA"/>
+          <element xmi:type="esb:AddressEndPoint" href="endpoint_AccountOpeningProcessServiceEP.esb#//@server/@children.0/@child"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GZh-tKAREeSg9u2Yt2LyVA" width="75" height="75"/>
+        </children>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_GXohQaAREeSg9u2Yt2LyVA" showTitle="true"/>
+      </children>
+      <element xmi:type="esb:EndpointDiagram" href="endpoint_AccountOpeningProcessServiceEP.esb#//@server/@children.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GXn6MaAREeSg9u2Yt2LyVA" width="127" height="100"/>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_GMV3QaAREeSg9u2Yt2LyVA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_GMV3QqAREeSg9u2Yt2LyVA" fontName="Sans"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_GMV3Q6AREeSg9u2Yt2LyVA"/>
+    <element xmi:type="esb:EsbServer" href="endpoint_AccountOpeningProcessServiceEP.esb#//@server"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GMV3RKAREeSg9u2Yt2LyVA"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_GDjusaAREeSg9u2Yt2LyVA"/>
+  <element xmi:type="esb:EsbDiagram" href="endpoint_AccountOpeningProcessServiceEP.esb#/"/>
+</notation:Diagram>

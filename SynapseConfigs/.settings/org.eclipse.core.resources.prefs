@@ -1,8 +1,12 @@
 eclipse.preferences.version=1
+encoding//src/main/graphical-synapse-config/endpoints/endpoint_AccountOpeningProcessServiceEP.esb=UTF-8
+encoding//src/main/graphical-synapse-config/endpoints/endpoint_AccountOpeningProcessServiceEP.esb_diagram=UTF-8
 encoding//src/main/graphical-synapse-config/endpoints/endpoint_MainFrameEP.esb=UTF-8
 encoding//src/main/graphical-synapse-config/endpoints/endpoint_MainFrameEP.esb_diagram=UTF-8
 encoding//src/main/graphical-synapse-config/endpoints/endpoint_cardServiceEP.esb=UTF-8
 encoding//src/main/graphical-synapse-config/endpoints/endpoint_cardServiceEP.esb_diagram=UTF-8
+encoding//src/main/graphical-synapse-config/proxy-services/proxy_AccountOpeningProcessServiceProxy.esb=UTF-8
+encoding//src/main/graphical-synapse-config/proxy-services/proxy_AccountOpeningProcessServiceProxy.esb_diagram=UTF-8
 encoding//src/main/graphical-synapse-config/proxy-services/proxy_AccountServiceProxy.esb=UTF-8
 encoding//src/main/graphical-synapse-config/proxy-services/proxy_AccountServiceProxy.esb_diagram=UTF-8
 encoding//src/main/graphical-synapse-config/proxy-services/proxy_CardService.esb=UTF-8

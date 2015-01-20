@@ -12,15 +12,27 @@
     <com.example.SynapseConfigs.endpoint_._MainFrameEP>capp/EnterpriseServiceBus</com.example.SynapseConfigs.endpoint_._MainFrameEP>
     <com.example.SynapseConfigs.proxy-service_._AccountServiceProxy>capp/EnterpriseServiceBus</com.example.SynapseConfigs.proxy-service_._AccountServiceProxy>
     <artifact.types>jaggery/app=zip,service/rule=aar,lib/library/bundle=jar,synapse/message-processors=xml,synapse/endpointTemplate=xml,synapse/proxy-service=xml,synapse/message-store=xml,carbon/application=car,registry/resource=zip,lib/dataservice/validator=jar,synapse/endpoint=xml,web/application=war,synapse/sequence=xml,synapse/configuration=xml,lib/registry/handlers=jar,synapse/task=xml,service/meta=xml,webapp/jaxws=war,synapse/api=xml,cep/bucket=xml,bpel/workflow=zip,lib/registry/filter=jar,service/dataservice=dbs,synapse/local-entry=xml,synapse/priority-executor=xml,synapse/event-source=xml,synapse/template=xml,lib/carbon/ui=jar,service/axis2=aar,synapse/sequenceTemplate=xml,wso2/gadget=dar,lib/synapse/mediator=jar</artifact.types>
+    <com.example.SynapseConfigs.proxy-service_._AccountOpeningProcessServiceProxy>capp/EnterpriseServiceBus</com.example.SynapseConfigs.proxy-service_._AccountOpeningProcessServiceProxy>
     <com.example.CustomerDS_._CustomerDS>capp/DataServicesServer</com.example.CustomerDS_._CustomerDS>
+    <com.bank.sample.RegistryResource.resource_._CreateAccountFromJson>capp/EnterpriseServiceBus</com.bank.sample.RegistryResource.resource_._CreateAccountFromJson>
     <wso2.hcc.MainframePojoService_._MainframePojoService>capp/ApplicationServer</wso2.hcc.MainframePojoService_._MainframePojoService>
     <com.example.AccountOpeningProcess_._AccountOpeningProcess>capp/BusinessProcessServer</com.example.AccountOpeningProcess_._AccountOpeningProcess>
+    <com.bank.sample.RegistryResource.resource_._CreateAccountFromJSONResponse>capp/EnterpriseServiceBus</com.bank.sample.RegistryResource.resource_._CreateAccountFromJSONResponse>
     <com.example.SynapseConfigs.endpoint_._cardServiceEP>capp/EnterpriseServiceBus</com.example.SynapseConfigs.endpoint_._cardServiceEP>
     <com.example.SynapseConfigs.proxy-service_._CardService>capp/EnterpriseServiceBus</com.example.SynapseConfigs.proxy-service_._CardService>
     <com.bank.sample.RegistryResource.resource_._transform_xslt>capp/EnterpriseServiceBus</com.bank.sample.RegistryResource.resource_._transform_xslt>
+    <com.example.SynapseConfigs.endpoint_._AccountOpeningProcessServiceEP>capp/EnterpriseServiceBus</com.example.SynapseConfigs.endpoint_._AccountOpeningProcessServiceEP>
     <org.wso2.sample.CardAxis2Service_._CardAxis2Service>capp/ApplicationServer</org.wso2.sample.CardAxis2Service_._CardAxis2Service>
   </properties>
   <dependencies>
+    <dependency>
+      <groupId>com.bank.sample.RegistryResource.resource</groupId>
+      <artifactId>CreateAccountFromJSONResponse</artifactId>
+      <version>1.0.0</version>
+      <type>zip</type>
+      <scope>system</scope>
+      <systemPath>${basedir}/../RegistryResource/target/capp/artifacts/resource/CreateAccountFromJSONResponse/pom.xml</systemPath>
+    </dependency>
     <dependency>
       <groupId>org.wso2.sample.CardAxis2Service</groupId>
       <artifactId>CardAxis2Service</artifactId>
@@ -28,10 +40,42 @@
       <type>aar</type>
     </dependency>
     <dependency>
+      <groupId>com.example.SynapseConfigs.proxy-service</groupId>
+      <artifactId>AccountOpeningProcessServiceProxy</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+      <scope>system</scope>
+      <systemPath>${basedir}/../SynapseConfigs/target/capp/artifacts/proxy-service/AccountOpeningProcessServiceProxy/pom.xml</systemPath>
+    </dependency>
+    <dependency>
       <groupId>com.example.AccountOpeningProcess</groupId>
       <artifactId>AccountOpeningProcess</artifactId>
       <version>1.0.0</version>
       <type>zip</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.SynapseConfigs.endpoint</groupId>
+      <artifactId>MainFrameEP</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+      <scope>system</scope>
+      <systemPath>${basedir}/../SynapseConfigs/target/capp/artifacts/endpoint/MainFrameEP/pom.xml</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>com.example.SynapseConfigs.endpoint</groupId>
+      <artifactId>AccountOpeningProcessServiceEP</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+      <scope>system</scope>
+      <systemPath>${basedir}/../SynapseConfigs/target/capp/artifacts/endpoint/AccountOpeningProcessServiceEP/pom.xml</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>com.bank.sample.RegistryResource.resource</groupId>
+      <artifactId>CreateAccountFromJson</artifactId>
+      <version>1.0.0</version>
+      <type>zip</type>
+      <scope>system</scope>
+      <systemPath>${basedir}/../RegistryResource/target/capp/artifacts/resource/CreateAccountFromJson/pom.xml</systemPath>
     </dependency>
     <dependency>
       <groupId>com.example.CustomerDS</groupId>
@@ -76,14 +120,6 @@
       <type>zip</type>
       <scope>system</scope>
       <systemPath>${basedir}/../RegistryResource/target/capp/artifacts/resource/transform_xslt/pom.xml</systemPath>
-    </dependency>
-    <dependency>
-      <groupId>com.example.SynapseConfigs.endpoint</groupId>
-      <artifactId>MainFrameEP</artifactId>
-      <version>1.0.0</version>
-      <type>xml</type>
-      <scope>system</scope>
-      <systemPath>${basedir}/../SynapseConfigs/target/capp/artifacts/endpoint/MainFrameEP/pom.xml</systemPath>
     </dependency>
   </dependencies>
   <repositories>

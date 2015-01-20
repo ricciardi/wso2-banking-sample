@@ -11,4 +11,10 @@
     <artifact name="CardService" groupId="com.example.SynapseConfigs.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/proxy-services/CardService.xml</file>
     </artifact>
+    <artifact name="AccountOpeningProcessServiceEP" groupId="com.example.SynapseConfigs.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/AccountOpeningProcessServiceEP.xml</file>
+    </artifact>
+    <artifact name="AccountOpeningProcessServiceProxy" groupId="com.example.SynapseConfigs.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/AccountOpeningProcessServiceProxy.xml</file>
+    </artifact>
 </artifacts>
